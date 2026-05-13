@@ -64,6 +64,14 @@ SlashCmdList["CLEANUI"] = function(msg)
         CleanUI_UseClassPortraits = not CleanUI_UseClassPortraits
         if UI.RefreshPortraits then UI.RefreshPortraits() end
         print("|cff00ff00CleanUI:|r Portraits toggled.")
+
+    elseif msg == "vehicle" then
+        if CleanUILeaveVehicleButton and CleanUILeaveVehicleButton:IsShown() then
+            CleanUILeaveVehicleButton:Click()
+        end
+        if UI.ApplyPetAnchorPosition then UI.ApplyPetAnchorPosition(false) end
+        if UI.UpdateLeaveVehicleButton then UI.UpdateLeaveVehicleButton(false) end
+        print("|cff00ff00CleanUI:|r Vehicle UI reset.")
     end
 end
 
